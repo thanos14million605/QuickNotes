@@ -8,6 +8,7 @@ import AppError from "./utils/AppError.js";
 // Routers
 import noteRouter from "./routes/noteRoutes.js";
 import authRouter from "./routes/authRoutes.js";
+import userRouter from "./routes/userNotes.js";
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/notes", noteRouter);
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/users", userRouter);
 
 app.use((req, _, next) => {
   return next(
